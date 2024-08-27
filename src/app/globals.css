@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaders-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.updates-small_screen::-webkit-scrollbar {
+  display: none;
+}
