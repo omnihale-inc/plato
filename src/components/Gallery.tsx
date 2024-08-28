@@ -28,9 +28,12 @@ const Gallery: React.FC<GalleryProps> = ({ onSetPositions }) => {
           <Modal onSetModal={setShowModal}>
             <div className="overflow-scroll py-5 gallery-scroll">
               <div className="flex justify-between w-11/12 mx-auto">
-                {schoolData.gallery.map((file) =>
+                {schoolData.gallery.map((file, index) =>
                   file.type === "image" ? (
-                    <div className="basis-9/12 lg:basis-7/12 shrink-0 mr-4 lg:mr-10">
+                    <div
+                      key={index}
+                      className="basis-9/12 lg:basis-7/12 shrink-0 mr-4 lg:mr-10"
+                    >
                       <div className="relative h-48 md:h-[395px] w-full">
                         <Image
                           src={file.src}
@@ -43,7 +46,10 @@ const Gallery: React.FC<GalleryProps> = ({ onSetPositions }) => {
                       {file.caption && <p className="mt-4">{file.caption}</p>}
                     </div>
                   ) : (
-                    <div className="basis-9/12 lg:basis-7/12 shrink-0 mr-4 lg:mr-10">
+                    <div
+                      key={index}
+                      className="basis-9/12 lg:basis-7/12 shrink-0 mr-4 lg:mr-10"
+                    >
                       <video
                         src={file.src as string}
                         controls
