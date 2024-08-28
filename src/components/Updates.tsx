@@ -38,7 +38,7 @@ const Updates: React.FC<UpdatesProps> = ({ onSetPositions }) => {
 
 const UpdatesSmallScreen = () => {
   return (
-    <div className="flex overflow-x-scroll gap-4 updates-small_screen mx-4">
+    <div className="flex overflow-x-scroll gap-4 updates-small_screen">
       {UPDATES.map((update, index) => (
         <div className="shrink-0 basis-64" key={index}>
           <UpdatesItem update={update} />

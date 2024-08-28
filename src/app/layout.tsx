@@ -6,7 +6,7 @@ import { satoshi } from "@/utils/font";
 
 export const metadata: Metadata = {
   title: schoolData.title,
-  description: "service brand website from omnihale",
+  description: "brand website from omnihale",
   keywords: [
     "Business innovation",
     "Innovative business solutions",
@@ -27,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={satoshi.className}>{children}</body>
+      <body className={satoshi.className}>
+        <div id="modal"></div>
+        {children}
+      </body>
     </html>
   );
 }

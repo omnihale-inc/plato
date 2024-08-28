@@ -4,6 +4,9 @@ type Positions = {
   home: number;
   about: number;
   leaders: number;
+  gallery: number;
+  newsletter: number;
+  calender: number;
   updates: number;
   contact: number;
 };
@@ -40,6 +43,12 @@ interface ServicesProps extends OnSetPositions {}
 
 interface LeadersProps extends OnSetPositions {}
 
+interface GalleryProps extends OnSetPositions {}
+
+interface NewsLetterProps extends OnSetPositions {}
+
+interface CalenderProps extends OnSetPositions {}
+
 export type {
   Positions,
   Update,
@@ -52,4 +61,7 @@ export type {
   LeadersProps,
   NavigationProps,
   UpdatesProps,
+  GalleryProps,
+  NewsLetterProps,
+  CalenderProps,
 };

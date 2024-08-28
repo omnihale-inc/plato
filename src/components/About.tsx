@@ -34,13 +34,13 @@ const About: React.FC<AboutProps> = ({ onSetPositions }) => {
             </p>
           </div>
         </div>
-        <VideoPlayer />
+        <VideoPlayer src={schoolData.about.video} />
       </div>
     </section>
   );
 };
 
-const VideoPlayer = () => {
+export const VideoPlayer = ({ src }: { src: string }) => {
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [cursor, setCursor] = useState("");
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -59,14 +59,14 @@ const VideoPlayer = () => {
   return (
     <div className="relative h-36 md:h-[395px] w-full mx-auto">
       <video
-        src={schoolData.about.video}
+        src={src}
         className="rounded-lg object-cover w-full h-full"
         ref={videoRef}
         loop={true}
       ></video>
       <div
         onClick={stopVideoHandler}
-        className={`absolute top-0 rounded-lg bg-[#ee7834] opacity-20 h-full w-full ${cursor}`}
+        className={`absolute top-0 rounded-lg bg-[${schoolData.themeSecondaryColor}] opacity-20 h-full w-full ${cursor}`}
       ></div>
       <PlayButton
         videoPlaying={videoPlaying}
@@ -88,13 +88,15 @@ const PlayButton = ({
       <div className="absolute top-0 grid place-items-center h-full w-full">
         <button
           onClick={playVideoHandler}
-          className="bg-[#ee7834] relative lg:h-20 lg:w-20 rounded-full p-5 z-20"
+          className={`bg-[#ee7834] relative lg:h-20 lg:w-20 rounded-full p-5 z-20`}
         >
           <div className="absolute h-5 w-5 lg:h-10 lg:w-10 top-[10px] left-3 lg:top-5 lg:left-6 ">
             <Image src={playImage} alt="play" fill />
           </div>
         </button>
-        <div className="bg-[#ee7834] absolute h-14 w-14 lg:h-28 lg:w-28 rounded-full p-5 opacity-40"></div>
+        <div
+          className={`bg-[${schoolData.themeSecondaryColor}] absolute h-14 w-14 lg:h-28 lg:w-28 rounded-full p-5 opacity-40`}
+        ></div>
       </div>
     )
   );

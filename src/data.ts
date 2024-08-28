@@ -5,7 +5,7 @@ import leaderTwo from "@/assets/images/testimonials/2.png";
 import leaderThree from "@/assets/images/testimonials/3.png";
 
 const schoolData = {
-  title: "Debbie's Delight",
+  title: "Honey Gold Schools",
   themeSecondaryColor: "#ee7834",
   home: {
     header: { main: "Welcome to", span: "Debbie's Delight" },
@@ -107,6 +107,16 @@ const schoolData = {
   ],
   schoolEmail: "contact@debbiechops.omnihale.com",
   copyright: "Debbie's Delight",
+  gallery: [
+    { src: "/gallery/video.mp4", caption: "My app", type: "video" },
+    {
+      src: "/gallery/image.jpg",
+      caption: "Testing my new caption",
+      type: "image",
+    },
+    { src: "/gallery/video.mp4", caption: "making waves", type: "video" },
+    { src: "/gallery/image.jpg", caption: "yes sir", type: "image" },
+  ],
 };
 
 export default schoolData;

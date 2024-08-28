@@ -3,7 +3,16 @@ import { useEffect, useState } from "react";
 import { NavigationProps, Positions } from "@/types";
 import schoolData from "@/data";
 
-const NAVIGATION_LINKS = ["Home", "About", "Leaders", "Updates", "Contact"];
+const NAVIGATION_LINKS = [
+  "Home",
+  "About",
+  "Leaders",
+  "Gallery",
+  "Newsletter",
+  "Calender",
+  "Updates",
+  "Contact",
+];
 
 const Navigation: React.FC<NavigationProps> = ({ positions }) => {
   const [heightOfNavigation, setheightOfNavigation] = useState(0);
@@ -24,11 +33,11 @@ const Navigation: React.FC<NavigationProps> = ({ positions }) => {
         >
           {schoolData.title}
         </h2>
-        <nav className="flex justify-between w-[253px] lg:w-[456px] mt-7 lg:mt-0">
+        <nav className="flex justify-between w-[353px] lg:w-[556px] mt-7 lg:mt-0">
           {NAVIGATION_LINKS.map((link, index) => (
             <button
               key={index}
-              className="text-xs lg:text-2xl"
+              className="text-xs lg:text-lg"
               onClick={(event) => {
                 scrollTo({
                   top:
