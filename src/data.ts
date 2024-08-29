@@ -117,6 +117,8 @@ const schoolData = {
     { src: "/gallery/video.mp4", caption: "making waves", type: "video" },
     { src: "/gallery/image.jpg", caption: "yes sir", type: "image" },
   ],
+  calender: "/calender.pdf",
+  newsletter: "/newsletter.pdf",
 };
 
 export default schoolData;

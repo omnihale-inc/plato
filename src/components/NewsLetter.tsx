@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Modal from "./Modal";
 import getElementPosition from "@/utils/getElementPosition";
 import { NewsLetterProps } from "@/types";
 import schoolData from "@/data";
 import { handbuck } from "@/utils/font";
 
-const newsLetter: string[] = [];
-
 const NewsLetter: React.FC<NewsLetterProps> = ({ onSetPositions }) => {
-  const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     getElementPosition(onSetPositions, "newsletter");
   }, [onSetPositions]);
@@ -20,10 +15,9 @@ const NewsLetter: React.FC<NewsLetterProps> = ({ onSetPositions }) => {
           Stay in the Know! 📰✨ Click the button to dive into our latest school
           newsletter and catch up on all the exciting information.
         </p>
-        <a href="/newsletter.pdf" target="_blank">
+        <a href={schoolData.newsletter} target="_blank">
           <button
             className={`block text-[${schoolData.themeSecondaryColor}] ${handbuck.className} text-lg lg:text-3xl mt-4`}
-            onClick={() => setShowModal(true)}
           >
             See NewsLetter
           </button>

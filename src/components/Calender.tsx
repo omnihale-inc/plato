@@ -15,7 +15,7 @@ const Calender: React.FC<CalenderProps> = ({ onSetPositions }) => {
           Never Miss a Date! 📅 Check out our school calendar by clicking the
           button below and stay updated on all upcoming events and holidays!
         </p>
-        <a href="/calender.pdf" target="_blank">
+        <a href={schoolData.calender} target="_blank">
           <button
             className={`block text-[${schoolData.themeSecondaryColor}] ${handbuck.className} text-lg lg:text-3xl mt-4`}
           >
