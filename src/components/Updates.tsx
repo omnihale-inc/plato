@@ -39,7 +39,7 @@ const Updates: React.FC = () => {
 
         {showModal.show && (
           <Modal onSetModal={setShowModal}>
-            <div className="w-4/5 max-w-lg mx-auto mt-16">
+            <div className="w-4/5 max-w-lg mx-auto">
               <div className="relative w-full h-44 lg:h-56 mb-6">
                 <Image
                   src={showModal.data.image}

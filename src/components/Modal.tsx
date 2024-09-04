@@ -15,12 +15,11 @@ const Modal = React.memo(function Modal({
 }) {
   // Modal children
   const modalChildren = (
-    <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50 overflow-y-auto">
+    <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
       <div className="w-full">
-        {children}
-        <div className="flex sticky justify-center mb-5">
+        <div className="flex sticky justify-center mb-5 z-50">
           <button
-            className={`block sticky px-7 rounded-full w-16 h-16 z-40`}
+            className={`block sticky px-7 rounded-full w-16 h-16 z-40 mt-4`}
             onClick={(e) => {
               const body = document.querySelector("body");
               body?.setAttribute("style", "overflow:scroll-y");
@@ -43,6 +42,9 @@ const Modal = React.memo(function Modal({
               objectFit="cover"
             />
           </button>
+        </div>
+        <div className="h-screen overflow-y-auto pb-28 modal-content-scroll">
+          {children}
         </div>
       </div>
     </div>
