@@ -1,54 +1,68 @@
-import { handbuck } from "@/utils/font";
-import { useEffect, useState } from "react";
-import { NavigationProps, Positions } from "@/types";
-import schoolData from "@/data";
+"use client";
 
-const NAVIGATION_LINKS = [
-  "Home",
-  "About",
-  "Leaders",
-  "Gallery",
-  "Newsletter",
-  "Calender",
-  "Updates",
-  "Contact",
-];
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const Navigation: React.FC<NavigationProps> = ({ positions }) => {
-  const [heightOfNavigation, setheightOfNavigation] = useState(0);
+type IconType = "home" | "about" | "documents";
 
-  useEffect(() => {
-    const heightOfNavigation = document.querySelector("header");
-    if (heightOfNavigation)
-      setheightOfNavigation(heightOfNavigation.offsetHeight);
-  }, []);
+const NAVIGATION_LINKS = ["Home", "About", "Documents"];
+
+const Navigation: React.FC = () => {
+  const icons = {
+    home: {
+      active: "/icons/home-active.png",
+      inactive: "/icons/home.png",
+    },
+    about: {
+      active: "/icons/about-active.png",
+      inactive: "/icons/about.png",
+    },
+    documents: {
+      active: "/icons/documents-active.png",
+      inactive: "/icons/documents.png",
+    },
+  };
+
+  const isActive = (href: string) => usePathname() === href;
+
+  const setStyleForActiveLink = (link: string) => {
+    const href = setHref(link);
+    return `${
+      isActive(href) ? "font-semibold" : ""
+    } flex items-center justify-center lg:pb-3 text-base `;
+  };
+
+  const setHref = (link: string) =>
+    link === "Home" ? "/" : `/${link.toLowerCase()}`;
 
   return (
-    <header
-      className={`${handbuck.className} fixed top-0 w-full z-30 bg-white pb-8`}
-    >
-      <section className="flex flex-col items-center lg:flex-row lg:justify-between lg:items-center mt-14 mx-auto max-w-6xl w-5/6">
-        <h2
-          className={`${handbuck.className} text-2xl lg:text-4xl text-center lg:text-left`}
-        >
-          {schoolData.title}
-        </h2>
-        <nav className="flex justify-between w-[353px] lg:w-[556px] mt-7 lg:mt-0">
+    <header className="fixed top-0 w-full z-30 bg-white pb-7 border-b border-gray-200">
+      <section className="flex flex-col items-center lg:flex-row lg:justify-between lg:items-center mt-8 mx-auto max-w-6xl w-5/6">
+        <div className="relative w-10 h-10">
+          <Image src="/logo.png" alt="logo" fill />
+        </div>
+        <nav className="flex justify-between mt-7 lg:mt-3 gap-5">
           {NAVIGATION_LINKS.map((link, index) => (
-            <button
+            <Link
+              href={setHref(link)}
               key={index}
-              className="text-xs lg:text-lg"
-              onClick={(event) => {
-                scrollTo({
-                  top:
-                    positions[link.toLocaleLowerCase() as keyof Positions] -
-                    heightOfNavigation,
-                });
-                event.preventDefault();
-              }}
+              className={setStyleForActiveLink(link)}
             >
+              <div className="relative h-4 w-4 mr-1">
+                <Image
+                  src={
+                    isActive(setHref(link))
+                      ? icons[link.toLocaleLowerCase() as IconType].active
+                      : icons[link.toLocaleLowerCase() as IconType].inactive
+                  }
+                  alt="nav-icon"
+                  fill
+                  objectFit="contain"
+                />
+              </div>
               {link}
-            </button>
+            </Link>
           ))}
         </nav>
       </section>

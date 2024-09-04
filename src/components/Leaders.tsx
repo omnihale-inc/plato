@@ -1,18 +1,9 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { handbuck } from "@/utils/font";
-import { LeadersProps } from "@/types";
 import schoolData from "@/data";
 
-const Leaders: React.FC<LeadersProps> = ({ onSetPositions }) => {
-  useEffect(() => {
-    const leadersPosition = window.document.getElementById("leaders");
-    if (leadersPosition && onSetPositions)
-      onSetPositions((prevState) => ({
-        ...prevState,
-        leaders: leadersPosition?.offsetTop,
-      }));
-  }, [onSetPositions]);
+const Leaders: React.FC = () => {
   return (
     <section id="leaders">
       <h2

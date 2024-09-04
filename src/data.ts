@@ -55,12 +55,42 @@ const schoolData = {
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
     },
   ],
+  testimonies: [
+    {
+      img: leaderOne,
+      details: "Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: leaderTwo,
+      details:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: leaderThree,
+      details:
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: leaderOne,
+      details: "Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: leaderTwo,
+      details:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: leaderThree,
+      details:
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
+    },
+  ],
   updates: [
     {
       image: itemImage,
       title: "Parent techers association coming up on the 2nd of februray",
       description:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
     },
     {
       image: itemImage,
