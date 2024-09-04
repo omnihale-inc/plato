@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import schoolData from "@/data";
 import Modal from "./Modal";
-import { ShowModal, UpdatesItemProps } from "@/types";
+import { UpdatesItemProps } from "@/types";
 import { UpdatesProps, Update } from "@/types";
 import { handbuck } from "@/utils/font";
 import truncateText from "@/utils/truncateText";
@@ -14,9 +14,15 @@ import addItemToScreen from "@/utils/addItemsToScreen";
 const UPDATES = schoolData.updates;
 
 const Updates: React.FC = () => {
-  const [showModal, setShowModal] = useState<ShowModal>({
-    show: false,
-    data: { image: "", title: "", description: "" },
+  const [showModal, setShowModal] = useState(false);
+  const [updateData, setUpdateData] = useState<{
+    image: string | StaticImageData;
+    title: string;
+    description: string;
+  }>({
+    image: "",
+    title: "",
+    description: "",
   });
 
   return (
@@ -31,29 +37,36 @@ const Updates: React.FC = () => {
       </h2>
       <div>
         <div className="lg:hidden">
-          <UpdatesSmallScreen onShowModal={setShowModal} />
+          <UpdatesSmallScreen
+            onUpdateData={setUpdateData}
+            onShowModal={setShowModal}
+          />
         </div>
         <div className="hidden lg:block">
-          <UpdatesLargeScreen onShowModal={setShowModal} updates={UPDATES} />
+          <UpdatesLargeScreen
+            onUpdateData={setUpdateData}
+            onShowModal={setShowModal}
+            updates={UPDATES}
+          />
         </div>
 
-        {showModal.show && (
-          <Modal onSetModal={setShowModal}>
+        {showModal && (
+          <Modal onSetModal={setShowModal} type="updates">
             <div className="w-4/5 max-w-lg mx-auto">
               <div className="relative w-full h-44 lg:h-56 mb-6">
                 <Image
-                  src={showModal.data.image}
+                  src={updateData.image}
                   alt="update icon"
                   fill
                   objectFit="cover"
                   className="rounded-lg"
                 />
               </div>
-              <div className="bg-white py-7 px-10 mb-10 rounded-lg">
-                <h2 className={`${handbuck.className} lg:text-2xl`}>
-                  {showModal.data.title}
+              <div className="bg-white py-5 px-6 mb-10 rounded-lg">
+                <h2 className={`${handbuck.className} text-lg lg:text-2xl`}>
+                  {updateData.title}
                 </h2>
-                <p className="mt-3">{showModal.data.description}</p>
+                <p className="mt-3 text-sm">{updateData.description}</p>
               </div>
             </div>
           </Modal>
@@ -65,14 +78,26 @@ const Updates: React.FC = () => {
 
 const UpdatesSmallScreen = ({
   onShowModal,
+  onUpdateData,
 }: {
-  onShowModal: React.Dispatch<React.SetStateAction<ShowModal>>;
+  onShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  onUpdateData: React.Dispatch<
+    React.SetStateAction<{
+      image: string | StaticImageData;
+      title: string;
+      description: string;
+    }>
+  >;
 }) => {
   return (
     <div className="flex overflow-x-scroll gap-4 updates-small_screen">
       {UPDATES.map((update, index) => (
         <div className="shrink-0 basis-64" key={index}>
-          <UpdatesItem onShowModal={onShowModal} update={update} />
+          <UpdatesItem
+            onShowModal={onShowModal}
+            onUpdateData={onUpdateData}
+            update={update}
+          />
         </div>
       ))}
     </div>
@@ -82,6 +107,7 @@ const UpdatesSmallScreen = ({
 const UpdatesLargeScreen: React.FC<UpdatesProps> = ({
   updates,
   onShowModal,
+  onUpdateData,
 }) => {
   const [renderedUpdates, setRenderedUpdates] = useState<Update[]>([]);
   const [cursor, setCursor] = useState(0);
@@ -100,7 +126,11 @@ const UpdatesLargeScreen: React.FC<UpdatesProps> = ({
       <div className="grid grid-cols-3 gap-7">
         {renderedUpdates.map((update, index) => (
           <React.Fragment key={index}>
-            <UpdatesItem onShowModal={onShowModal} update={update} />
+            <UpdatesItem
+              onShowModal={onShowModal}
+              onUpdateData={onUpdateData}
+              update={update}
+            />
           </React.Fragment>
         ))}
       </div>
@@ -124,7 +154,11 @@ const UpdatesLargeScreen: React.FC<UpdatesProps> = ({
   );
 };
 
-const UpdatesItem: React.FC<UpdatesItemProps> = ({ update, onShowModal }) => {
+const UpdatesItem: React.FC<UpdatesItemProps> = ({
+  update,
+  onShowModal,
+  onUpdateData,
+}) => {
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
@@ -170,8 +204,11 @@ const UpdatesItem: React.FC<UpdatesItemProps> = ({ update, onShowModal }) => {
         </p>
       )}
       <p
-        className="mt-2 font-regular text-blue-800 cursor-pointer"
-        onClick={() => onShowModal({ show: true, data: update })}
+        className="text-xs lg:text-base mt-2 font-regular text-blue-800 cursor-pointer hover:font-semibold"
+        onClick={() => {
+          onShowModal(true);
+          onUpdateData(update);
+        }}
       >
         Read
       </p>

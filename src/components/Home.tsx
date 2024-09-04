@@ -5,7 +5,7 @@ import { HomeProps } from "@/types";
 
 const Home: React.FC<HomeProps> = ({ media }) => {
   return (
-    <section className="mt-56 lg:mt-44 mx-auto max-w-6xl w-5/6" id="home">
+    <section className="mt-40 lg:mt-44 mx-auto max-w-6xl w-5/6" id="home">
       <div className="w-4/5 max-w-2xl mx-auto ">
         <h2
           className={`${handbuck.className} text-3xl text-center lg:text-7xl`}

@@ -20,6 +20,10 @@
   background-color: #c6c5c5;
 }
 
+.bizscribes {
+  gap: 5px;
+}
+
 @media screen and (max-width: 600px) {
   .gallery-scroll::-webkit-scrollbar {
     display: none;

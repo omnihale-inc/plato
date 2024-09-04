@@ -1,9 +1,10 @@
 import Navigation from "@/components/Navigation";
+import MasterPage from "@/templates/MasterPage";
 
 export default function page() {
   return (
-    <main>
-      <Navigation />
-    </main>
+    <MasterPage>
+      <div></div>
+    </MasterPage>
   );
 }

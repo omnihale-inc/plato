@@ -1,17 +1,14 @@
-import Navigation from "@/components/Navigation";
 import Home from "@/components/Home";
 import Updates from "@/components/Updates";
-import Footer from "@/components/Footer";
 import Testimonies from "@/components/Testimonies";
+import MasterPage from "@/templates/MasterPage";
 
 export default function page() {
   return (
-    <main>
-      <Navigation />
+    <MasterPage>
       <Home media="image" />
       <Updates />
       <Testimonies />
-      <Footer />
-    </main>
+    </MasterPage>
   );
 }
