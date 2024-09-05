@@ -48,12 +48,16 @@ function MasterPage({
           </div>
         </Modal>
       )}
-      {children}
-      <div className="mt-32 lg:mt-0"></div>
-      <BottomNavigation />
-      <div className="hidden lg:block">
-        <Footer />
+      <div className="lg:flex lg:flex-col lg:justify-between masterpage-content">
+        <div>
+          {children}
+          <div className="h-32 lg:hidden"></div>
+        </div>
+        <div className="hidden lg:block">
+          <Footer />
+        </div>
       </div>
+      <BottomNavigation />
     </main>
   );
 }

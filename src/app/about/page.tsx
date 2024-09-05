@@ -4,7 +4,7 @@ import MasterPage from "@/templates/MasterPage";
 export default function page() {
   return (
     <MasterPage>
-      <div></div>
+      <div>hello</div>
     </MasterPage>
   );
 }

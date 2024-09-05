@@ -24,6 +24,10 @@
   gap: 5px;
 }
 
+.masterpage-content {
+  height: 100vh;
+}
+
 @media screen and (max-width: 600px) {
   .gallery-scroll::-webkit-scrollbar {
     display: none;

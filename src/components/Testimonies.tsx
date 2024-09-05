@@ -11,7 +11,7 @@ const Testimonies: React.FC = () => {
       >
         Testimonies
       </h2>
-      <div className="flex md:justify-evenly lg:justify-center overflow-x-scroll md:overflow-auto md:flex-wrap leaders-scroll text-black mt-7 lg:mt-14 lg:pb-20 mx-5">
+      <div className="flex md:justify-evenly lg:justify-center overflow-x-scroll md:overflow-auto md:flex-wrap text-black mt-7 lg:mt-14 mx-5 leaders-scroll">
         {schoolData.testimonies.map((testimony, index) => (
           <div key={index} className={`mr-7 basis-56 shrink-0 md:mb-16`}>
             <div className="relative h-[100px] w-[100px] mb-5 mx-auto ">
