@@ -16,7 +16,7 @@ const TopNavigation = ({
         </div>
         <div className="absolute top-0 h-full w-full flex justify-end items-center pr-4">
           <div
-            className="relative w-7 h-7 lg:hidden cursor-pointer"
+            className="relative w-6 h-6 lg:hidden cursor-pointer"
             onClick={() => onMobileNav(true)}
           >
             <Image

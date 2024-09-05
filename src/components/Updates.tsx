@@ -49,7 +49,7 @@ const Updates: React.FC = () => {
             updates={UPDATES}
           />
         </div>
-
+        {/* Renders full update contents on modal */}
         {showModal && (
           <Modal onSetModal={setShowModal} type="updates">
             <div className="w-4/5 max-w-lg mx-auto">
@@ -163,6 +163,7 @@ const UpdatesItem: React.FC<UpdatesItemProps> = ({
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
+    // Truncates text on page load and page resize
     setTruncateText();
     window.addEventListener("resize", () => {
       setTruncateText();

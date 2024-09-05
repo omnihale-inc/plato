@@ -31,8 +31,4 @@ interface UpdatesProps {
   >;
 }
 
-interface HomeProps {
-  media: "image" | "video";
-}
-
-export type { Update, UpdatesProps, HomeProps, UpdatesItemProps };
+export type { Update, UpdatesProps, UpdatesItemProps };

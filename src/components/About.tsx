@@ -1,38 +1,27 @@
+"use client";
+
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { AboutProps } from "@/types";
+import { useRef, useState } from "react";
 import { handbuck } from "@/utils/font";
 import playImage from "@/assets/images/icons/play.png";
-import getElementPosition from "@/utils/getElementPosition";
 import schoolData from "@/data";
 
-const About: React.FC<AboutProps> = ({ onSetPositions }) => {
-  useEffect(() => {
-    getElementPosition(onSetPositions, "about");
-  }, [onSetPositions]);
-
+const About: React.FC = () => {
   return (
-    <section className="mt-5 lg:mt-10" id="about">
-      <div className="flex flex-col justify-between items-center mx-auto max-w-6xl w-5/6 py-11 lg:py-16 h-fit">
-        <div className="lg:flex lg:flex-col h-full lg:h-[356px] lg:w-5/6 mb-4 lg:mb-8">
+    <section className="mt-40 lg:mt-44 mx-auto max-w-6xl w-5/6">
+      <div className="flex flex-col justify-between items-center mx-auto max-w-6xl w-5/6">
+        <div className="lg:w-5/6 mb-4 lg:mb-8">
           <h2
-            className={`${handbuck.className} text-center text-2xl lg:text-6xl mt-10 mb-6`}
+            className={`${handbuck.className} text-center text-3xl lg:text-7xl mb-6`}
           >
             {schoolData.about.header.main}{" "}
             <span className={`text-[${schoolData.themeSecondaryColor}]`}>
               {schoolData.about.header.span}
             </span>
           </h2>
-          <p className="text-xs lg:text-xl text-center max-w-[900px] mx-auto font-light leading-2 lg:leading-[25px]">
+          <p className="text-xs lg:text-base text-center max-w-[900px] mx-auto font-light leading-2 lg:leading-[25px] mb-3 lg:mb-0">
             {schoolData.about.paragraph}
           </p>
-          <div className="lg:flex lg:justify-end lg:items-end">
-            <p
-              className={`${handbuck.className} text-xs lg:text-base text-center lg:text-left mt-6 lg:mt-10`}
-            >
-              About
-            </p>
-          </div>
         </div>
         <VideoPlayer src={schoolData.about.video} />
       </div>
@@ -60,13 +49,13 @@ export const VideoPlayer = ({ src }: { src: string }) => {
     <div className="relative h-36 md:h-[395px] w-full mx-auto">
       <video
         src={src}
-        className="rounded-lg object-cover w-full h-full"
+        className="rounded-lg lg:rounded-xl object-cover w-full h-full"
         ref={videoRef}
         loop={true}
       ></video>
       <div
         onClick={stopVideoHandler}
-        className={`absolute top-0 rounded-lg bg-[${schoolData.themeSecondaryColor}] opacity-20 h-full w-full ${cursor}`}
+        className={`absolute top-0 rounded-lg lg:rounded-xl bg-[${schoolData.themeSecondaryColor}] opacity-20 h-full w-full ${cursor}`}
       ></div>
       <PlayButton
         videoPlaying={videoPlaying}

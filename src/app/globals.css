@@ -25,6 +25,9 @@
 }
 
 .masterpage-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
 }
 
@@ -34,5 +37,8 @@
   }
   .modal-content-scroll::-webkit-scrollbar-thumb {
     display: none;
+  }
+  .masterpage-content {
+    height: 100%;
   }
 }

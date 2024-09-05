@@ -6,7 +6,7 @@ import MasterPage from "@/templates/MasterPage";
 export default function page() {
   return (
     <MasterPage>
-      <Home media="image" />
+      <Home />
       <Updates />
       <Testimonies />
     </MasterPage>

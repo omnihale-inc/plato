@@ -24,27 +24,28 @@ const Navigation: React.FC = () => {
     },
   };
 
-  const isActive = (href: string) => usePathname() === href;
+  const currentUrlPath = usePathname();
+  const isActive = (href: string) => currentUrlPath === href;
 
   const setStyleForActiveLink = (link: string) => {
     const href = setHref(link);
     return `${
       isActive(href) ? "font-semibold" : ""
-    } relative flex items-center justify-center lg:pb-3 text-base `;
+    } relative flex flex-col lg:flex-row items-center justify-center lg:pb-3 text-xs lg:text-base `;
   };
 
   const setHref = (link: string) =>
     link === "Home" ? "/" : `/${link.toLowerCase()}`;
 
   return (
-    <nav className="flex justify-between mt-7 lg:mt-3 gap-5 z-50">
+    <nav className="flex justify-evenly lg:justify-between mt-4 lg:mt-3 gap-5 z-50">
       {NAVIGATION_LINKS.map((link, index) => (
         <Link
           href={setHref(link)}
           key={index}
           className={setStyleForActiveLink(link)}
         >
-          <div className="relative h-4 w-4 mr-1">
+          <div className="relative h-5 w-5 lg:h-4 lg:mr-1 lg:w-4 mb-1 lg:mb-0">
             <Image
               src={
                 isActive(setHref(link))
