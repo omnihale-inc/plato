@@ -1,6 +1,6 @@
 "use client";
 
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 import BottomNavigation from "@/components/BottomNavigation";
 import Footer from "@/components/Footer";
@@ -16,10 +16,38 @@ function MasterPage({
   children: React.ReactNode;
 }>) {
   const [mobileNav, setMobileNav] = useState(false);
+  const setWindowPosition = useState(0)[1];
+  const [hideNav, setHideNav] = useState(false);
+
+  useEffect(() => {
+    const handlerWindowScroll = () => {
+      const scrollPosition = window.scrollY;
+      const topNavigationHeight = window.innerWidth < 800 ? 70 : 60;
+      // Given that the windowScrollHandler will execute outside
+      // of the current MasterPage context, the only way to access
+      // the currentWindowPosition is through the prevState variable
+      // of the function parameter of the setWindowPosition
+      setWindowPosition((prevState) => {
+        if (
+          scrollPosition > prevState &&
+          scrollPosition > topNavigationHeight
+        ) {
+          setHideNav(true);
+          return scrollPosition;
+        } else {
+          setHideNav(false);
+          return scrollPosition;
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handlerWindowScroll);
+    return () => window.removeEventListener("scroll", handlerWindowScroll);
+  }, []);
 
   return (
     <main>
-      <TopNavigation onMobileNav={setMobileNav} />
+      <TopNavigation onMobileNav={setMobileNav} hideNav={hideNav} />
       <MobileNav mobileNav={mobileNav} onMobileNav={setMobileNav} />
       <MasterPageContent>{children}</MasterPageContent>
       <BottomNavigation />
@@ -71,7 +99,7 @@ function MasterPageContent({ children }: { children: React.ReactNode }) {
       <div>
         {children}
         {/* add spacing between BottomNavigation */}
-        <div className="h-32 lg:hidden"></div>
+        <div className="spacing-bottom-nav"></div>
       </div>
       <div className="hidden lg:block">
         <Footer />

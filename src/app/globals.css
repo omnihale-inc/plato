@@ -31,6 +31,20 @@
   height: 100vh;
 }
 
+.top-nav {
+  animation: show-nav 0.3s ease-in;
+}
+
+@keyframes show-nav {
+  from {
+    position: absolute;
+    top: -600px;
+  }
+  top {
+    position: fixed;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .gallery-scroll::-webkit-scrollbar {
     display: none;
@@ -40,5 +54,8 @@
   }
   .masterpage-content {
     height: 100%;
+  }
+  .spacing-bottom-nav {
+    margin-bottom: 128px;
   }
 }
