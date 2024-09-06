@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
         <h2 className={`${handbuck.className} text-base lg:text-3xl`}>
           You can reach us on
         </h2>
-        <div className="grid grid-cols-4 lg:grid-cols-6 gap-2 lg:gap-3 mt-2 lg:mt-0">
+        <div className="grid grid-cols-4 lg:grid-cols-6 gap-2 lg:gap-3 mt-2 lg:mt-3">
           {CONTACTS.map((contact, index) => (
             <Link
               href={contact.url}
