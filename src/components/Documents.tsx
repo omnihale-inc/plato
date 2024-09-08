@@ -62,7 +62,7 @@ const Document = ({
             />
           </div>
           <p
-            className="text-[11px] lg:text-base mx-2 w-56 lg:w-72 pt-0.5"
+            className="text-[11px] lg:text-base mx-2 w-44 lg:w-72 pt-0.5"
             ref={documentTitleRef}
           >
             {document.title}
