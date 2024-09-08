@@ -18,7 +18,7 @@ const truncateText = (
         text.length > 0
       ) {
         // Removes the last word
-        text = text.slice(0, -1);
+        text.pop();
 
         // Adds the ellipsis at the end of the words
         ref.current.innerText = `${text.join(" ")} ...`;

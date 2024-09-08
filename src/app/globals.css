@@ -31,7 +31,7 @@
   height: 100vh;
 }
 
-.top-nav {
+/* .top-nav {
   animation: show-nav 0.3s ease-in;
 }
 
@@ -43,7 +43,7 @@
   top {
     position: fixed;
   }
-}
+} */
 
 @media screen and (max-width: 600px) {
   .gallery-scroll::-webkit-scrollbar {

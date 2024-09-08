@@ -11,7 +11,7 @@ const Modal = React.memo(function Modal({
 }: {
   children: React.ReactNode;
   onSetModal: React.Dispatch<React.SetStateAction<boolean>>;
-  type: "updates" | "mobile-nav";
+  type: "updates" | "mobile-nav" | "pdf";
 }) {
   const closeModal = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const body = document.querySelector("body");
@@ -53,6 +53,13 @@ const Modal = React.memo(function Modal({
         </ModalChildrenForUpdates>,
         modalContainer
       );
+    else if (type === "pdf")
+      return createPortal(
+        <ModalChildrenForPdfView closeModal={closeModal}>
+          {children}
+        </ModalChildrenForPdfView>,
+        modalContainer
+      );
     else
       return createPortal(
         <ModalChildrenForMobileNav closeModal={closeModal}>
@@ -62,13 +69,13 @@ const Modal = React.memo(function Modal({
       );
 });
 
-function ModalChildrenForUpdates({
+const ModalChildrenForUpdates = ({
   closeModal,
   children,
 }: {
   closeModal: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   children: React.ReactNode;
-}) {
+}) => {
   return (
     <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
       <div className="w-full">
@@ -91,15 +98,15 @@ function ModalChildrenForUpdates({
       </div>
     </div>
   );
-}
+};
 
-function ModalChildrenForMobileNav({
+const ModalChildrenForMobileNav = ({
   closeModal,
   children,
 }: {
   closeModal: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   children: React.ReactNode;
-}) {
+}) => {
   return (
     <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
       <div className="flex flex-col items-end w-full pt-10 pr-10">
@@ -122,6 +129,37 @@ function ModalChildrenForMobileNav({
       </div>
     </div>
   );
-}
+};
+
+const ModalChildrenForPdfView = ({
+  closeModal,
+  children,
+}: {
+  closeModal: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
+      <div className="flex flex-col items-end w-11/12 max-w-6xl mx-auto pt-10">
+        <button
+          className="block relative w-10 h-10 cursor-pointer"
+          onClick={(e) => closeModal(e)}
+        >
+          <Image
+            src="/icons/close.png"
+            alt="close icons"
+            fill
+            objectFit="cover"
+          />
+        </button>
+        <div className="flex justify-end w-full  mt-5">
+          <div className=" bg-white p-5 w-11/12 max-w-6xl mx-auto rounded-md border border-gray-300">
+            {children}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Modal;

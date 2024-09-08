@@ -22,7 +22,7 @@ function MasterPage({
   useEffect(() => {
     const handlerWindowScroll = () => {
       const scrollPosition = window.scrollY;
-      const topNavigationHeight = window.innerWidth < 800 ? 70 : 60;
+      const topNavigationHeight = window.innerWidth < 800 ? 67 : 60;
       // Given that the windowScrollHandler will execute outside
       // of the current MasterPage context, the only way to access
       // the currentWindowPosition is through the prevState variable
