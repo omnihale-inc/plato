@@ -38,7 +38,7 @@ const Navigation: React.FC = () => {
     link === "Home" ? "/" : `/${link.toLowerCase()}`;
 
   return (
-    <nav className="flex justify-evenly lg:justify-between mt-4 lg:mt-3 gap-5 z-50">
+    <nav className="flex justify-evenly lg:justify-between mt-4 lg:mt-3 z-50">
       {NAVIGATION_LINKS.map((link, index) => (
         <Link
           href={setHref(link)}
