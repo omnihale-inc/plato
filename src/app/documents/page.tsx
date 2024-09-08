@@ -5,7 +5,7 @@ import SearchInput from "@/components/SearchInput";
 import MasterPage from "@/templates/MasterPage";
 import { useState } from "react";
 
-export default function page() {
+export default function Page() {
   const [searchQuery, setSearchQuery] = useState("");
   return (
     <MasterPage>

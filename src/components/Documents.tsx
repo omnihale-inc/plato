@@ -10,7 +10,7 @@ import Modal from "./Modal";
 const DOCUMENTS = [
   { title: "School News letter", url: "/newsletter.pdf" },
   {
-    title: "School calender for first term of september 2024",
+    title: "School calend  er for first term of september 2024",
     url: "/calender.pdf",
   },
 ];
