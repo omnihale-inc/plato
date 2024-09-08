@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Modal from "./Modal";
-import getElementPosition from "@/utils/getElementPosition";
 import schoolData from "@/data";
 import { handbuck } from "@/utils/font";
 

@@ -1,7 +1,5 @@
-import { Positions } from "@/types";
-
 function getElementPosition(
-  onSetPositions: React.Dispatch<React.SetStateAction<Positions>> | undefined,
+  onSetPositions: React.Dispatch<React.SetStateAction<object>> | undefined,
   id: string
 ) {
   const elementPosition = window.document.getElementById(id);
