@@ -22,7 +22,8 @@ function MasterPage({
   useEffect(() => {
     const handlerWindowScroll = () => {
       const scrollPosition = window.scrollY;
-      const topNavigationHeight = window.innerWidth < 800 ? 67 : 60;
+      const topNavigationHeight = 67;
+      const mediumScreen = 800;
       // Given that the windowScrollHandler will execute outside
       // of the current MasterPage context, the only way to access
       // the currentWindowPosition is through the prevState variable
@@ -30,7 +31,8 @@ function MasterPage({
       setWindowPosition((prevState) => {
         if (
           scrollPosition > prevState &&
-          scrollPosition > topNavigationHeight
+          scrollPosition > topNavigationHeight &&
+          innerWidth < mediumScreen
         ) {
           setHideNav(true);
           return scrollPosition;
