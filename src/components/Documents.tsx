@@ -68,7 +68,10 @@ const Document = ({
             {document.title}
           </p>
           <div className="flex items-center gap-3">
-            <button onClick={() => setShowModal(true)}>
+            <button
+              className="hidden lg:block"
+              onClick={() => setShowModal(true)}
+            >
               <DocumentIcon iconSrc="/icons/view.png" />
             </button>
             <a
