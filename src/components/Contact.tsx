@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
             <Link
               href={contact.url}
               key={index}
-              className="relative h-5 w-5 lg:h-10 lg:w-10"
+              className="relative h-6 w-6 lg:h-10 lg:w-10"
             >
               <Image
                 src={contact.iconImage}
