@@ -20,15 +20,16 @@
   background-color: #c6c5c5;
 }
 
-.bizscribes {
-  gap: 5px;
-}
-
 .masterpage-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+}
+
+.elon-image {
+  height: 400px;
+  flex-basis: 400px;
 }
 
 @media screen and (max-width: 600px) {
@@ -44,6 +45,12 @@
   .spacing-bottom-nav {
     margin-bottom: 128px;
   }
+
+  .elon-image {
+    height: 200px;
+    flex-basis: 200px;
+  }
+
   .top-nav {
     animation: show-nav 0.3s ease-in;
   }
