@@ -25,7 +25,7 @@ const ICONS = [
   },
 ];
 
-const Navigation: React.FC = React.memo(() => {
+const Navigation: React.FC = () => {
   const [icons, setIcons] = useState<Array<{ name: string; src: string }>>([]);
   const [imageCache, setImageCache] = useState<Map<any, any>>(new Map());
 
@@ -75,7 +75,7 @@ const Navigation: React.FC = React.memo(() => {
       ))}
     </nav>
   );
-});
+};
 
 const handleFetchAndStoreNavIcons = async () => {
   const fileUrls: { name: string; url: string }[] = []; // Add all the file URLs you want to store
