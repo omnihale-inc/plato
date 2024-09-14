@@ -161,7 +161,6 @@ function checkImageCache(
   icons: { name: string; src: string }[],
   state: "active" | "inactive"
 ) {
-  console.log(imageCache);
   if (state === "active") {
     if (imageCache.has(`${link.toLocaleLowerCase()}-active`)) {
       console.log("using cached image");
@@ -174,5 +173,4 @@ function checkImageCache(
     }
     return getImageSrc(icons, link);
   }
-  return "";
 }
