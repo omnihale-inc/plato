@@ -2,7 +2,6 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-import BottomNavigation from "@/components/BottomNavigation";
 import Footer from "@/components/Footer";
 import TopNavigation from "@/components/TopNavigation";
 import Modal from "@/components/Modal";
@@ -74,7 +73,6 @@ function MasterPage({
       <MobileNav mobileNav={mobileNav} onMobileNav={setMobileNav} />
       <BizScribesPop showPopUp={showPopUp} onShowPopUp={setShowPopUp} />
       <MasterPageContent>{children}</MasterPageContent>
-      <BottomNavigation />
     </main>
   );
 }

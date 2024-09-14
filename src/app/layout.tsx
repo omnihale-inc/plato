@@ -3,6 +3,7 @@ import "./globals.css";
 import schoolData from "@/data";
 
 import { satoshi } from "@/utils/font";
+import BottomNavigation from "@/components/BottomNavigation";
 
 export const metadata: Metadata = {
   title: schoolData.title,
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={satoshi.className}>
         <div id="modal"></div>
         {children}
+        <BottomNavigation />
       </body>
     </html>
   );

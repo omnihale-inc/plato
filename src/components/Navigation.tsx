@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { fetchAndStoreFiles, getFileByName } from "@/lib/indexedDB";
 
 const NAVIGATION_LINKS = ["Home", "About", "Documents"];
@@ -25,13 +25,15 @@ const ICONS = [
   },
 ];
 
-const Navigation: React.FC = () => {
+const Navigation: React.FC = React.memo(() => {
   const [icons, setIcons] = useState<Array<{ name: string; src: string }>>([]);
+  const [imageCache, setImageCache] = useState<Map<any, any>>(new Map());
 
   // Stores image files in indexDB to improve performance
   useEffect(() => {
     handleFetchAndStoreNavIcons();
-    handleNavigationIconRetrieval(setIcons);
+    Object.entries(imageCache).length < 6 &&
+      handleNavigationIconRetrieval(setIcons, setImageCache);
   }, []);
 
   const currentUrlPath = usePathname();
@@ -60,8 +62,8 @@ const Navigation: React.FC = () => {
             <Image
               src={
                 isActive(setHref(link))
-                  ? getImageSrc(icons, link, "active")
-                  : getImageSrc(icons, link)
+                  ? checkImageCache(imageCache, link, icons, "active")
+                  : checkImageCache(imageCache, link, icons, "inactive")
               }
               alt="nav-icon"
               fill
@@ -73,7 +75,7 @@ const Navigation: React.FC = () => {
       ))}
     </nav>
   );
-};
+});
 
 const handleFetchAndStoreNavIcons = async () => {
   const fileUrls: { name: string; url: string }[] = []; // Add all the file URLs you want to store
@@ -97,9 +99,11 @@ const handleNavigationIconRetrieval = async (
         src: string;
       }[]
     >
-  >
+  >,
+  setImageCache: Dispatch<SetStateAction<Map<any, any>>>
 ) => {
   const imageSrcs = [];
+  const imageCache: Map<any, any> = new Map();
 
   for (let icon of ICONS) {
     const fileDataActive = await getFileByName(`${icon.name}-active`);
@@ -113,11 +117,13 @@ const handleNavigationIconRetrieval = async (
         name: `${icon.name}`,
         src: imgSrcInactive,
       });
+      imageCache.set([`${icon.name}-active`], imgSrcActive);
+      imageCache.set([`${icon.name}`], imgSrcInactive);
     }
   }
 
   setIcons(imageSrcs);
-  console.log(imageSrcs);
+  setImageCache(imageCache);
 };
 
 const getImageSrc = (
@@ -139,7 +145,6 @@ const getImageSrc = (
           )[0]; // active or inactive navigation icon
 
     if (requestIcon && requestIcon.src) {
-      console.log("using indexdb image");
       return requestIcon.src;
     }
   }
@@ -149,3 +154,25 @@ const getImageSrc = (
 };
 
 export default Navigation;
+
+function checkImageCache(
+  imageCache: Map<any, any>,
+  link: string,
+  icons: { name: string; src: string }[],
+  state: "active" | "inactive"
+) {
+  console.log(imageCache);
+  if (state === "active") {
+    if (imageCache.has(`${link.toLocaleLowerCase()}-active`)) {
+      console.log("using cached image");
+      return imageCache.get(`${link.toLocaleLowerCase()}-active`);
+    }
+    return getImageSrc(icons, link, state);
+  } else {
+    if (imageCache.has(`${link.toLocaleLowerCase()}`)) {
+      return imageCache.get(`${link.toLocaleLowerCase()}`);
+    }
+    return getImageSrc(icons, link);
+  }
+  return "";
+}
