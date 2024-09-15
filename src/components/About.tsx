@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import { handbuck } from "@/utils/font";
-import playImage from "@/assets/images/icons/play.png";
 import schoolData from "@/data";
 
 const About: React.FC = () => {
@@ -11,14 +10,14 @@ const About: React.FC = () => {
     <section className="mt-40 lg:mt-44 mx-auto max-w-6xl w-5/6">
       <div className="flex flex-col justify-between items-center mx-auto max-w-6xl w-5/6">
         <div className="lg:w-5/6 mb-4 lg:mb-8">
-          <h2
+          <h1
             className={`${handbuck.className} text-center text-3xl lg:text-7xl mb-6`}
           >
             {schoolData.about.header.main}{" "}
             <span className={`text-[${schoolData.themeSecondaryColor}]`}>
               {schoolData.about.header.span}
             </span>
-          </h2>
+          </h1>
           <p className="text-xs lg:text-base text-center max-w-[900px] mx-auto font-light leading-2 lg:leading-[25px] mb-3 lg:mb-0">
             {schoolData.about.paragraph}
           </p>
@@ -55,7 +54,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
       ></video>
       <div
         onClick={stopVideoHandler}
-        className={`absolute top-0 rounded-lg lg:rounded-xl bg-[${schoolData.themeSecondaryColor}] opacity-20 h-full w-full ${cursor}`}
+        className={`video-bg absolute top-0 rounded-lg lg:rounded-xl opacity-20 h-full w-full ${cursor}`}
       ></div>
       <PlayButton
         videoPlaying={videoPlaying}
@@ -77,15 +76,15 @@ const PlayButton = ({
       <div className="absolute top-0 grid place-items-center h-full w-full">
         <button
           onClick={playVideoHandler}
-          className={`bg-[#ee7834] relative lg:h-20 lg:w-20 rounded-full p-5 z-20`}
+          className="video-bg grid place-items-center relative lg:h-20 lg:w-20 rounded-full p-5 z-20"
         >
-          <div className="absolute h-5 w-5 lg:h-10 lg:w-10 top-[10px] left-3 lg:top-5 lg:left-6 ">
-            <Image src={playImage} alt="play" fill />
+          <div className="absolute  grid place-items-center w-full h-full top-0">
+            <div className="relative h-5 w-5 lg:h-10 lg:w-10 rotate-180">
+              <Image src="/play.png" alt="play" fill />
+            </div>
           </div>
         </button>
-        <div
-          className={`bg-[${schoolData.themeSecondaryColor}] absolute h-14 w-14 lg:h-28 lg:w-28 rounded-full p-5 opacity-40`}
-        ></div>
+        <div className="video-bg absolute h-14 w-14 lg:h-28 lg:w-28 rounded-full p-5 opacity-40"></div>
       </div>
     )
   );

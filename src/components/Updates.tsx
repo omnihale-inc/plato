@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 
 import schoolData from "@/data";
 import Modal from "./Modal";
-import { UpdatesItemProps } from "@/types";
+import { onUpdateData, UpdatesItemProps } from "@/types";
 import { UpdatesProps, Update } from "@/types";
 import { handbuck } from "@/utils/font";
 import truncateText from "@/utils/truncateText";
@@ -16,7 +16,7 @@ const UPDATES = schoolData.updates;
 const Updates: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [updateData, setUpdateData] = useState<{
-    image: string | StaticImageData;
+    image: string;
     title: string;
     description: string;
   }>({
@@ -63,9 +63,9 @@ const Updates: React.FC = () => {
                 />
               </div>
               <div className="bg-white py-5 px-6 mb-10 rounded-lg">
-                <h2 className={`${handbuck.className} text-lg lg:text-2xl`}>
+                <h3 className={`${handbuck.className} text-lg lg:text-2xl`}>
                   {updateData.title}
-                </h2>
+                </h3>
                 <p className="mt-3 text-sm">{updateData.description}</p>
               </div>
             </div>
@@ -81,13 +81,7 @@ const UpdatesSmallScreen = ({
   onUpdateData,
 }: {
   onShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-  onUpdateData: React.Dispatch<
-    React.SetStateAction<{
-      image: string | StaticImageData;
-      title: string;
-      description: string;
-    }>
-  >;
+  onUpdateData: onUpdateData;
 }) => {
   return (
     <div className="flex overflow-x-scroll gap-4 updates-small_screen">
@@ -193,17 +187,12 @@ const UpdatesItem: React.FC<UpdatesItemProps> = ({
           className="rounded-md"
         />
       </div>
-      <h2 className={`${handbuck.className} lg:text-2xl mt-6`} ref={titleRef}>
+      <h3 className={`${handbuck.className} lg:text-2xl mt-6`} ref={titleRef}>
         {update.title}
-      </h2>
+      </h3>
       <p className="text-xs lg:text-sm" ref={descriptionRef}>
         {update.description}
       </p>
-      {update.amount && (
-        <p className="mt-3 lg:mt-5 font-semibold text-sm lg:text-base">
-          {update.amount}
-        </p>
-      )}
       <p
         className="text-xs lg:text-base mt-2 font-regular text-blue-800 cursor-pointer hover:font-semibold"
         onClick={() => {

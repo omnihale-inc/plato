@@ -1,25 +1,27 @@
 import Image from "next/image";
 
 import { handbuck } from "@/utils/font";
+import schoolData from "@/data";
 
 const Home: React.FC = () => {
   return (
     <section className="mt-40 lg:mt-44 mx-auto max-w-6xl w-5/6">
       <div className="w-4/5 max-w-2xl mx-auto ">
-        <h2
+        <h1
           className={`${handbuck.className} text-3xl text-center lg:text-7xl`}
         >
-          Lorem ipsum dolor sit amet
-        </h2>
+          {schoolData.home.header.main} <br />
+          <span className={`text-[${schoolData.themeSecondaryColor}]`}>
+            {schoolData.home.header.span}
+          </span>
+        </h1>
         <p className="text-xs text-center lg:text-base mt-3 lg:mt-0 font-light">
-          Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat
-          nulla habitant consequat. Lorem ipsum dolor sit amet consectetur.
-          Neque viverra vitae volutpat nulla habi
+          {schoolData.home.paragraph}
         </p>
       </div>
       <div className="relative h-36 sm:h-48 lg:h-[400px] w-5/6 lg:w-5/6 mx-auto mt-4 lg:mt-10">
         <Image
-          src="/home.jpg"
+          src={schoolData.home.image}
           fill
           objectFit="cover"
           alt="home"

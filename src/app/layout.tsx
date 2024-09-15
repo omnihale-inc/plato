@@ -7,18 +7,14 @@ import BottomNavigation from "@/components/BottomNavigation";
 
 export const metadata: Metadata = {
   title: schoolData.title,
-  description: "brand website from omnihale",
+  description: `${schoolData.title} school website`,
   keywords: [
-    "Business innovation",
-    "Innovative business solutions",
-    "Business transformation",
-    "Cutting-edge business strategies",
-    "Revolutionizing business",
-    "Future of business",
-    "Business development",
-    "Modern business practices",
+    `${schoolData.title} website`,
+    `${schoolData.title} information center`,
+    `${schoolData.title} main indentity`,
+    `${schoolData.title} school`,
   ],
-  icons: "/logo.png",
+  icons: schoolData.logo,
 };
 
 export default function RootLayout({

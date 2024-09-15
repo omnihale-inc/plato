@@ -8,6 +8,7 @@ import Modal from "@/components/Modal";
 import Link from "next/link";
 import { ollifiaPoettry } from "@/utils/font";
 import Image from "next/image";
+import schoolData from "@/data";
 
 function MasterPage({
   children,
@@ -20,6 +21,8 @@ function MasterPage({
   const setWindowPosition = useState(0)[1];
 
   useEffect(() => {
+    setTheme();
+
     const handlerWindowScroll = () => {
       const scrollPosition = window.scrollY;
       const topNavigationHeight = 67;
@@ -51,18 +54,26 @@ function MasterPage({
     // Handles showing pop when user visits the website for the first
     // using that device
     const timeSinceLastPopUp = localStorage.getItem("last-popup");
+    const currentDate = new Date();
     if (timeSinceLastPopUp) {
-      const timeSinceLastPopUpInDate = new Date(timeSinceLastPopUp);
-      const twoWeeksLater = new Date(
-        timeSinceLastPopUpInDate.getTime() + 14 * 24 * 60 * 60 * 1000
+      const timeSinceLastPopUpParsed = new Date(
+        timeSinceLastPopUp && JSON.parse(timeSinceLastPopUp)
       );
-      const currentDate = new Date();
+      const twoWeeksLater = new Date(
+        timeSinceLastPopUpParsed.getTime() + 14 * 24 * 60 * 60 * 1000
+      );
       if (currentDate >= twoWeeksLater) {
         setShowPopUp(true);
-        localStorage.setItem("last-popup", JSON.stringify(new Date()));
+        localStorage.setItem(
+          "last-popup",
+          JSON.stringify(currentDate.toISOString())
+        );
       }
     } else {
-      localStorage.setItem("last-popup", JSON.stringify(new Date()));
+      localStorage.setItem(
+        "last-popup",
+        JSON.stringify(currentDate.toISOString())
+      );
       setShowPopUp(true);
     }
   }, []);
@@ -76,6 +87,22 @@ function MasterPage({
     </main>
   );
 }
+
+const setTheme = () => {
+  const spans = document.querySelectorAll("span");
+  spans.forEach((span) => (span.style.color = schoolData.themeSecondaryColor));
+
+  const h2s = document.querySelectorAll("h2");
+  h2s.forEach((h2) => (h2.style.color = schoolData.themeSecondaryColor));
+
+  const videoBGs = document.querySelectorAll(".video-bg");
+  videoBGs.forEach((videoBG) =>
+    videoBG.setAttribute(
+      "style",
+      `background-color:${schoolData.themeSecondaryColor}`
+    )
+  );
+};
 
 const BizScribesPop = ({
   showPopUp,

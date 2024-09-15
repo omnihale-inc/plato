@@ -5,25 +5,19 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 
 import truncateText from "@/utils/truncateText";
+import schoolData from "@/data";
 import Modal from "./Modal";
-
-const DOCUMENTS = [
-  { title: "School News letter", url: "/newsletter.pdf" },
-  {
-    title: "School calend  er for first term of september 2024",
-    url: "/calender.pdf",
-  },
-];
 
 const Documents = ({ searchQuery }: { searchQuery: string }) => {
   const [documents, setDocuments] = useState<
     Array<{ title: string; url: string }>
   >([]);
   useEffect(() => {
-    if (searchQuery.trimStart().trimEnd() === "") setDocuments(DOCUMENTS);
+    if (searchQuery.trimStart().trimEnd() === "")
+      setDocuments(schoolData.documents);
     else
       setDocuments(
-        DOCUMENTS.filter((document) =>
+        schoolData.documents.filter((document) =>
           document.title.toLocaleLowerCase().includes(searchQuery)
         )
       );

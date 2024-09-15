@@ -19,7 +19,7 @@ const Gallery: React.FC = () => {
           className={`block text-[${schoolData.themeSecondaryColor}] ${handbuck.className} text-lg lg:text-3xl mt-4`}
           onClick={() => setShowModal(true)}
         >
-          See Gallery
+          <h2>See Gallery</h2>
         </button>
         {showModal && (
           <Modal onSetModal={setShowModal} type="gallery">

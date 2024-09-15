@@ -5,9 +5,9 @@ import schoolData from "@/data";
 
 const Leaders: React.FC = () => {
   return (
-    <section id="leaders">
+    <section>
       <h2
-        className={`${handbuck.className} mt-16 text-center text-black text-3xl lg:text-6xl`}
+        className={`${handbuck.className} mt-16 lg:mt-36 text-center text-black text-3xl lg:text-6xl`}
       >
         Leaders
       </h2>

@@ -1,19 +1,7 @@
 import Image from "next/image";
 import { handbuck } from "@/utils/font";
-import contactImage from "@/assets/images/contact.png";
 import Link from "next/link";
-
-const CONTACTS = [
-  { iconImage: "/icons/instagram.png", url: "/#" },
-  { iconImage: "/icons/facebook.png", url: "/#" },
-  { iconImage: "/icons/tiktok.png", url: "/#" },
-  { iconImage: "/icons/whatsapp.png", url: "/#" },
-  {
-    iconImage: "/icons/gmail.png",
-    url: "mailto:contact@omnihale.com",
-  },
-  { iconImage: "/icons/call.png", url: "tel:07037374411" },
-];
+import schoolData from "@/data";
 
 const Contact: React.FC = () => {
   return (
@@ -23,7 +11,7 @@ const Contact: React.FC = () => {
           You can reach us on
         </h2>
         <div className="grid grid-cols-4 lg:grid-cols-6 gap-2 lg:gap-3 mt-2 lg:mt-3">
-          {CONTACTS.map((contact, index) => (
+          {schoolData.contacts.map((contact, index) => (
             <Link
               href={contact.url}
               key={index}
@@ -40,7 +28,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
       <div className="relative -top-6 lg:-top-14 h-60 lg:h-[530px] mx-auto mt-10 lg:mt-0 w-full max-w-[620px]">
-        <Image src={contactImage} fill objectFit="contain" alt="home" />
+        <Image src="/contact.png" fill objectFit="contain" alt="home" />
       </div>
     </section>
   );

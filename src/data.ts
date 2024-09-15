@@ -1,142 +1,140 @@
-import homeImage from "@/assets/images/home.jpg";
-import itemImage from "@/assets/images/item.png";
-import leaderOne from "@/assets/images/testimonials/1.png";
-import leaderTwo from "@/assets/images/testimonials/2.png";
-import leaderThree from "@/assets/images/testimonials/3.png";
-
 const schoolData = {
   title: "Honey Gold Schools",
-  themeSecondaryColor: "#ee7834",
+  logo: "/logo.png",
+  themeSecondaryColor: "green",
+
+  // Home Page Starts
   home: {
-    header: { main: "Welcome to", span: "Debbie's Delight" },
+    header: { main: "Welcome to", span: "Honey Gold Schools" },
     paragraph:
-      "Hello, and welcome to Debbie's Delight, your go-to destination for mouthwatering treats that bring joy to every bite! We specialize in crafting delicious cakes, buns, meat pies, and doughnuts that are made with love and the finest ingredients.",
-    image: homeImage,
+      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi",
+    image: "/home.jpg",
   },
-  about: {
-    header: { main: "Why choose", span: "Us" },
-    paragraph:
-      "Whether you're celebrating a special occasion or simply indulging in a sweet craving, our delectable baked goods are sure to satisfy. At Debbie's Delight, we believe in the power of good food to bring people together, and we're excited to share our passion for baking with you. Thank you for choosing Debbie Chops – where every bite is a taste of happiness!",
-    video: "/about.mp4",
-  },
-  leaders: [
-    {
-      img: leaderOne,
-      role: "Vice Principal",
-      details: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderTwo,
-      role: "Head Teacher",
-      details:
-        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderThree,
-      role: "Exam Officer",
-      details:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderOne,
-      role: "Exam Officer",
-      details: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderTwo,
-      role: "Exam Officer",
-      details:
-        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderThree,
-      role: "Games Masters",
-      details:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
-    },
-  ],
-  testimonies: [
-    {
-      img: leaderOne,
-      details: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderTwo,
-      details:
-        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderThree,
-      details:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderOne,
-      details: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderTwo,
-      details:
-        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: leaderThree,
-      details:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
-    },
-  ],
   updates: [
     {
-      image: itemImage,
+      image: "/updates-images/item.png",
       title: "Parent techers association coming up on the 2nd of februray",
       description:
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
     },
     {
-      image: itemImage,
+      image: "/updates-images/item.png",
       title: "Students will be competing in maths olympiad",
       description:
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
     },
     {
-      image: itemImage,
+      image: "/updates-images/item.png",
       title: "School fees deadline will be on 30th of August",
       description:
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
     },
     {
-      image: itemImage,
+      image: "/updates-images/item.png",
       title: "School will be resuming on the 10th of september",
       description:
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
     },
     {
-      image: itemImage,
+      image: "/updates-images/item.png",
       title: "Parent techers association coming up on the 2nd of februray",
       description:
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
     },
     {
-      image: itemImage,
+      image: "/updates-images/item.png",
       title: "Students will be competing in maths olympiad",
       description:
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
     },
     {
-      image: itemImage,
+      image: "/updates-images/item.png",
       title: "School fees deadline will be on 30th of August",
       description:
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
     },
     {
-      image: itemImage,
+      image: "/updates-images/item.png",
       title: "School will be resuming on the 10th of september",
       description:
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
     },
   ],
-  schoolEmail: "contact@debbiechops.omnihale.com",
-  copyright: "Debbie's Delight",
+  testimonies: [
+    {
+      img: "/testimonies-images/1.png",
+      details: "Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/testimonies-images/2.png",
+      details:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/testimonies-images/3.png",
+      details:
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/testimonies-images/1.png",
+      details: "Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/testimonies-images/2.png",
+      details:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/testimonies-images/3.png",
+      details:
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
+    },
+  ],
+  // Home Page Ends
+
+  // About Page Starts
+  about: {
+    header: { main: "Why choose", span: "Us" },
+    paragraph:
+      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi!",
+    video: "/about.mp4",
+  },
+  leaders: [
+    {
+      img: "/leaders-images/1.png",
+      role: "Vice Principal",
+      details: "Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/leaders-images/2.png",
+      role: "Head Teacher",
+      details:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/leaders-images/3.png",
+      role: "Exam Officer",
+      details:
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/leaders-images/1.png",
+      role: "Exam Officer",
+      details: "Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/leaders-images/2.png",
+      role: "Exam Officer",
+      details:
+        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+    },
+    {
+      img: "/leaders-images/3.png",
+      role: "Games Masters",
+      details:
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
+    },
+  ],
   gallery: [
     { src: "/gallery/video.mp4", caption: "My app", type: "video" },
     {
@@ -147,8 +145,28 @@ const schoolData = {
     { src: "/gallery/video.mp4", caption: "making waves", type: "video" },
     { src: "/gallery/image.jpg", caption: "yes sir", type: "image" },
   ],
-  calender: "/calender.pdf",
-  newsletter: "/newsletter.pdf",
+  contacts: [
+    { iconImage: "/icons/instagram.png", url: "/#" },
+    { iconImage: "/icons/facebook.png", url: "/#" },
+    { iconImage: "/icons/tiktok.png", url: "/#" },
+    { iconImage: "/icons/whatsapp.png", url: "/#" },
+    {
+      iconImage: "/icons/gmail.png",
+      url: "mailto:contact@omnihale.com",
+    },
+    { iconImage: "/icons/call.png", url: "tel:07037374411" },
+  ],
+  // About Page Ends
+
+  // Documents Page Starts
+  documents: [
+    { title: "School News letter", url: "/newsletter.pdf" },
+    {
+      title: "School calend  er for first term of september 2024",
+      url: "/calender.pdf",
+    },
+  ],
+  // Documents Page End
 };
 
 export default schoolData;
