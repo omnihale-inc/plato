@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import schoolData from "@/data";
 
+import "./globals.scss";
+import schoolData from "@/data";
 import { satoshi } from "@/utils/font";
 import BottomNavigation from "@/components/BottomNavigation";
 

@@ -1,6 +1,20 @@
+$themeColor: orange;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+span {
+  color: $themeColor;
+}
+
+h2 {
+  color: $themeColor;
+}
+
+.video-bg {
+  background-color: $themeColor;
+}
 
 .leaders-scroll::-webkit-scrollbar {
   display: none;
@@ -60,7 +74,7 @@
       position: absolute;
       top: -600px;
     }
-    top {
+    to {
       position: fixed;
     }
   }

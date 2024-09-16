@@ -21,8 +21,6 @@ function MasterPage({
   const setWindowPosition = useState(0)[1];
 
   useEffect(() => {
-    setTheme();
-
     const handlerWindowScroll = () => {
       const scrollPosition = window.scrollY;
       const topNavigationHeight = 67;
@@ -87,22 +85,6 @@ function MasterPage({
     </main>
   );
 }
-
-const setTheme = () => {
-  const spans = document.querySelectorAll("span");
-  spans.forEach((span) => (span.style.color = schoolData.themeSecondaryColor));
-
-  const h2s = document.querySelectorAll("h2");
-  h2s.forEach((h2) => (h2.style.color = schoolData.themeSecondaryColor));
-
-  const videoBGs = document.querySelectorAll(".video-bg");
-  videoBGs.forEach((videoBG) =>
-    videoBG.setAttribute(
-      "style",
-      `background-color:${schoolData.themeSecondaryColor}`
-    )
-  );
-};
 
 const BizScribesPop = ({
   showPopUp,

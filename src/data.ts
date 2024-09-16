@@ -1,7 +1,6 @@
 const schoolData = {
   title: "Honey Gold Schools",
   logo: "/logo.png",
-  themeSecondaryColor: "green",
 
   // Home Page Starts
   home: {

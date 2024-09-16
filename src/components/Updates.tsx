@@ -141,7 +141,7 @@ const UpdatesLargeScreen: React.FC<UpdatesProps> = ({
             )
           }
         >
-          Read More
+          <h2>Read More</h2>
         </button>
       )}
     </>
