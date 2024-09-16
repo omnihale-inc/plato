@@ -130,7 +130,7 @@ const UpdatesLargeScreen: React.FC<UpdatesProps> = ({
       </div>
       {cursor < updates.length && (
         <button
-          className={`${handbuck.className} mt-14 text-center w-full lg:text-2xl text-[#ee7834]`}
+          className={`${handbuck.className} mt-14 text-center w-full lg:text-2xl`}
           onClick={() =>
             addItemToScreen(
               renderedUpdates,

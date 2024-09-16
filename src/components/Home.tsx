@@ -11,9 +11,7 @@ const Home: React.FC = () => {
           className={`${handbuck.className} text-3xl text-center lg:text-7xl`}
         >
           {schoolData.home.header.main} <br />
-          <span className={`text-[${schoolData.themeSecondaryColor}]`}>
-            {schoolData.home.header.span}
-          </span>
+          <span>{schoolData.home.header.span}</span>
         </h1>
         <p className="text-xs text-center lg:text-base mt-3 lg:mt-0 font-light">
           {schoolData.home.paragraph}

@@ -14,9 +14,7 @@ const About: React.FC = () => {
             className={`${handbuck.className} text-center text-3xl lg:text-7xl mb-6`}
           >
             {schoolData.about.header.main}{" "}
-            <span className={`text-[${schoolData.themeSecondaryColor}]`}>
-              {schoolData.about.header.span}
-            </span>
+            <span>{schoolData.about.header.span}</span>
           </h1>
           <p className="text-xs lg:text-base text-center max-w-[900px] mx-auto font-light leading-2 lg:leading-[25px] mb-3 lg:mb-0">
             {schoolData.about.paragraph}

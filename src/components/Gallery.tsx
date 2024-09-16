@@ -16,7 +16,7 @@ const Gallery: React.FC = () => {
           vibrant gallery and see the magic of learning in action.
         </p>
         <button
-          className={`block text-[${schoolData.themeSecondaryColor}] ${handbuck.className} text-lg lg:text-3xl mt-4`}
+          className={`block ${handbuck.className} text-lg lg:text-3xl mt-4`}
           onClick={() => setShowModal(true)}
         >
           <h2>See Gallery</h2>
