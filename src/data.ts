@@ -1,10 +1,10 @@
 const schoolData = {
-  title: "Honey Gold Schools",
+  title: "omnihale plato",
   logo: "/logo.png",
 
   // Home Page Starts
   home: {
-    header: { main: "Welcome to", span: "Honey Gold Schools" },
+    header: { main: "Welcome to", span: "PLATO" },
     paragraph:
       "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi",
     image: "/home.jpg",
