@@ -1,10 +1,10 @@
 const schoolData = {
-  title: "omnihale plato",
+  title: "Gifted Hands Basic School",
   logo: "/logo.png",
 
   // Home Page Starts
   home: {
-    header: { main: "Welcome to", span: "PLATO" },
+    header: { main: "Welcome to", span: "Gifted Hands Basic School" },
     paragraph:
       "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi",
     image: "/home.jpg",
@@ -159,10 +159,13 @@ const schoolData = {
 
   // Documents Page Starts
   documents: [
-    { title: "School News letter", url: "/newsletter.pdf" },
     {
-      title: "School calend  er for first term of september 2024",
-      url: "/calender.pdf",
+      title: "Lesson Note on Cultural and Creative Arts JSS3 FirstTerm",
+      url: "/LessonNoteonCulturalandCreativeArtsJSS3FirstTerm-Edudelight.com_1726687539436.pdf",
+    },
+    {
+      title: "Lesson Note on Business Studies JSS3 FirstTerm",
+      url: "/LessonNoteonBusinessStudiesJSS3FirstTerm-Edudelight.com_1726687201259.pdf",
     },
   ],
   // Documents Page End
