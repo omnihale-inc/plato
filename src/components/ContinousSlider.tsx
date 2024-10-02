@@ -6,10 +6,10 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 const ContinuousSlider = ({ images }: { images: string[] }) => {
   const [scrollImages, setScrollImages] = useState<Array<string>>();
   const [isPaused, setIsPaused] = useState(false);
+  const [scrollStep, setScrollStep] = useState(0);
   const animationFrameRef = useRef<number | null>(null); // Store requestAnimationFrame ID
   const sliderRef = useRef<HTMLDivElement>(null);
   const showBackgroundRef = useRef<HTMLDivElement>(null);
-  const scrollStep = 1; // Adjust this value for speed
 
   useLayoutEffect(() => {
     // Duplicates the images a 1000 times
@@ -18,6 +18,9 @@ const ContinuousSlider = ({ images }: { images: string[] }) => {
       imagesToScroll = [...imagesToScroll, ...images];
     }
     setScrollImages(imagesToScroll);
+
+    // Set scroll step base on screen size
+    window.innerHeight > 800 ? setScrollStep(1) : setScrollStep(4);
   }, []);
 
   const scrollSlider = () => {
