@@ -23,7 +23,7 @@ const Gallery: React.FC = () => {
         </button>
         {showModal && (
           <Modal onSetModal={setShowModal} type="gallery">
-            <div className="flex justify-between gap-4 lg:gap-10">
+            <div className="flex justify-between gap-4 lg:gap-10 pb-4 lg:pb-8">
               {schoolData.gallery.map((file, index) =>
                 file.type === "image" ? (
                   <div

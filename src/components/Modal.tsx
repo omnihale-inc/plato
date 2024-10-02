@@ -97,7 +97,7 @@ const ModalChildrenForUpdates = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
+    <div className="fixed top-0 backdrop-blur-sm bg-black/15 h-screen w-screen z-50">
       <div className="w-full">
         <div className="flex sticky justify-center mb-5 z-50">
           <button
@@ -128,7 +128,7 @@ const ModalChildrenForPopUp = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
+    <div className="fixed top-0 backdrop-blur-sm bg-black/15 h-screen w-screen z-50">
       <div className="flex flex-col items-end w-11/12 h-full max-w-6xl mx-auto pt-10">
         <button
           className="block relative w-10 h-10 cursor-pointer"
@@ -159,7 +159,7 @@ const ModalChildrenForPdfView = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
+    <div className="fixed top-0 backdrop-blur-sm bg-black/15 h-screen w-screen z-50">
       <div className="flex flex-col items-end w-11/12 max-w-6xl mx-auto pt-10">
         <button
           className="block relative w-10 h-10 cursor-pointer"
@@ -190,7 +190,7 @@ const ModalChildrenForGallery = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
+    <div className="fixed top-0 backdrop-blur-sm bg-black/15 h-screen w-screen z-50">
       <div className="grid place-items-center w-full h-screen">
         <div>
           <div className="flex justify-center mb-5 z-50">
@@ -223,7 +223,7 @@ const ModalChildrenForHistory = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
+    <div className="fixed top-0 backdrop-blur-sm bg-black/15 h-screen w-screen z-50">
       <div className="grid place-items-center w-full h-screen">
         <div>
           <div className="flex justify-center mb-5 z-50">

@@ -89,7 +89,7 @@ export const VideoPlayer = ({ src }: { src: string }) => {
       ></video>
       <div
         onClick={stopVideoHandler}
-        className={`video-bg absolute top-0 rounded-lg lg:rounded-xl opacity-20 h-full w-full ${cursor}`}
+        className={`video-bg absolute top-0 rounded-lg lg:rounded-xl opacity-10 lg:opacity-20 h-full w-full ${cursor}`}
       ></div>
       <PlayButton
         videoPlaying={videoPlaying}

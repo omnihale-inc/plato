@@ -64,9 +64,11 @@ const ContinuousSlider = ({ images }: { images: string[] }) => {
         <div className="inline-flex">
           {scrollImages &&
             scrollImages.map((src, index) => (
-              <div className="relative w-52 h-28 lg:w-72 lg:h-40 mx-1 border border-gray-300">
+              <div
+                className="relative w-52 h-28 lg:w-72 lg:h-40 mx-1 border border-gray-300"
+                key={index}
+              >
                 <Image
-                  key={index}
                   src={src}
                   alt={`Slide ${index}`}
                   fill
