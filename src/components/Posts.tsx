@@ -33,7 +33,7 @@ const Updates: React.FC = () => {
       <h2
         className={`${handbuck.className} pt-14 lg:pt-20 text-center text-3xl lg:text-6xl`}
       >
-        Updates
+        Posts
       </h2>
       <div>
         <div className="lg:hidden">
