@@ -89,14 +89,20 @@ const schoolData = {
         "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
     },
   ],
+  certificates: ["/home.jpg", "/play.png", "/logo.png", "/error.jpg"],
   // Home Page Ends
 
   // About Page Starts
   about: {
     header: { main: "Why choose", span: "Us" },
-    paragraph:
+    mission:
       "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi!",
     video: "/about.mp4",
+    values: [
+      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi!",
+      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi!",
+      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi!",
+    ],
   },
   leaders: [
     {
@@ -144,6 +150,59 @@ const schoolData = {
     { src: "/gallery/video.mp4", caption: "making waves", type: "video" },
     { src: "/gallery/image.jpg", caption: "yes sir", type: "image" },
   ],
+  history: {
+    images: [
+      "/gallery/image.jpg",
+      "/gallery/image.jpg",
+      "/gallery/image.jpg",
+      "/gallery/image.jpg",
+    ],
+    texts: {
+      paragraphs: [
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sitamet consectetur Lorem ipsum dolor sit amet consectetur.",
+      ],
+      events: [
+        {
+          title:
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet",
+          details: [
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sitamet consectetur Lorem ipsum dolor sit amet consectetur.",
+          ],
+        },
+        {
+          title:
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet",
+          details: [
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sitamet consectetur Lorem ipsum dolor sit amet consectetur.",
+          ],
+        },
+        {
+          title:
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet",
+          details: [
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sitamet consectetur Lorem ipsum dolor sit amet consectetur.",
+          ],
+        },
+        {
+          title:
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet",
+          details: [
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+            "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sitamet consectetur Lorem ipsum dolor sit amet consectetur.",
+          ],
+        },
+      ],
+    },
+  },
   contacts: [
     { iconImage: "/icons/instagram.png", url: "/#" },
     { iconImage: "/icons/facebook.png", url: "/#" },
@@ -159,10 +218,11 @@ const schoolData = {
 
   // Documents Page Starts
   documents: [
-    { title: "School News letter", url: "/newsletter.pdf" },
+    { title: "School News letter", url: "/newsletter.pdf", locked: false },
     {
       title: "School calend  er for first term of september 2024",
       url: "/calender.pdf",
+      locked: true,
     },
   ],
   // Documents Page End

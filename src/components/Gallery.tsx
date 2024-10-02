@@ -9,9 +9,9 @@ import { handbuck } from "@/utils/font";
 const Gallery: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   return (
-    <section id="gallery">
+    <section className="mt-7" id="gallery">
       <div className="flex flex-col justify-between items-center mx-auto max-w-6xl w-5/6 py-6 lg:py-8 h-fit">
-        <p className="lg:text-lg text-center">
+        <p className="lg:text-lg text-center text-sm">
           Discover Our School in Pictures! 🎓✨ Click the button to explore our
           vibrant gallery and see the magic of learning in action.
         </p>

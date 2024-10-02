@@ -11,7 +11,7 @@ const Modal = React.memo(function Modal({
 }: {
   children: React.ReactNode;
   onSetModal: React.Dispatch<React.SetStateAction<boolean>>;
-  type: "updates" | "mobile-nav" | "pdf" | "gallery" | "popup";
+  type: "updates" | "mobile-nav" | "pdf" | "gallery" | "popup" | "history";
 }) {
   const closeModal = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const body = document.querySelector("body");
@@ -71,6 +71,13 @@ const Modal = React.memo(function Modal({
         <ModalChildrenForGallery closeModal={closeModal}>
           {children}
         </ModalChildrenForGallery>,
+        modalContainer
+      );
+    else if (type === "history")
+      return createPortal(
+        <ModalChildrenForHistory closeModal={closeModal}>
+          {children}
+        </ModalChildrenForHistory>,
         modalContainer
       );
     else
@@ -202,6 +209,37 @@ const ModalChildrenForGallery = ({
           <div className="overflow-y-auto modal-content-scroll w-11/12 mx-auto">
             {children}
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ModalChildrenForHistory = ({
+  closeModal,
+  children,
+}: {
+  closeModal: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div className="fixed top-0 backdrop-blur-md bg-white/10 h-screen w-screen z-50">
+      <div className="grid place-items-center w-full h-screen">
+        <div>
+          <div className="flex justify-center mb-5 z-50">
+            <button
+              className={`block sticky px-7 rounded-full w-16 h-16 z-40 mt-4`}
+              onClick={(e) => closeModal(e)}
+            >
+              <Image
+                src="/icons/close.png"
+                alt="close icon"
+                fill
+                objectFit="cover"
+              />
+            </button>
+          </div>
+          <div className="w-11/12 mx-auto">{children}</div>
         </div>
       </div>
     </div>

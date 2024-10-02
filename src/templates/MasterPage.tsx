@@ -8,7 +8,6 @@ import Modal from "@/components/Modal";
 import Link from "next/link";
 import { ollifiaPoettry } from "@/utils/font";
 import Image from "next/image";
-import schoolData from "@/data";
 
 function MasterPage({
   children,

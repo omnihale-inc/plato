@@ -16,11 +16,48 @@ const About: React.FC = () => {
             {schoolData.about.header.main}{" "}
             <span>{schoolData.about.header.span}</span>
           </h1>
-          <p className="text-xs lg:text-base text-center max-w-[900px] mx-auto font-light leading-2 lg:leading-[25px] mb-3 lg:mb-0">
-            {schoolData.about.paragraph}
-          </p>
+          <div className="my-6 lg:my-10">
+            <h2
+              className={`${handbuck.className} text-center text-lg lg:text-3xl`}
+            >
+              Our Mission
+            </h2>
+            <p className="text-xs lg:text-base text-center max-w-[900px] mx-auto font-light leading-2 lg:leading-[25px] mb-3 lg:mb-0">
+              {schoolData.about.mission}
+            </p>
+          </div>
+          <VideoPlayer src={schoolData.about.video} />
+          <div className="mt-16 lg:mt-24">
+            <h2
+              className={`${handbuck.className} text-center text-lg lg:text-3xl my-6 lg:my-8`}
+            >
+              Our Values
+            </h2>
+            <div className="lg:flex lg:justify-center lg:gap-5 flex-wrap">
+              {schoolData.about.values.map((value, index) => (
+                <div className="lg:basis-52 grow-0 mb-8 lg:mb-7" key={index}>
+                  <div className="flex justify-center">
+                    <div className="w-10 h-10 lg:w-16 lg:h-16 rounded-full bg-gray-100 border border-gray-300 mb-4">
+                      <div className="w-full h-full grid place-items-center">
+                        <div className="relative w-6 h-6 lg:w-10 lg:h-10">
+                          <Image
+                            src="/icons/value.png"
+                            fill
+                            objectFit="contain"
+                            alt="value"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-xs lg:text-base text-center  mx-auto font-light leading-2 lg:leading-[25px]">
+                    {value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <VideoPlayer src={schoolData.about.video} />
       </div>
     </section>
   );

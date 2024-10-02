@@ -105,6 +105,9 @@ const handleNavigationIconRetrieval = async (
   const imageSrcs = [];
   const imageCache: Map<any, any> = new Map();
 
+  // Extracts the active and inactive icons
+  // Note: the only active icons are suffixed with "-active"
+  // as part of there string names
   for (let icon of ICONS) {
     const fileDataActive = await getFileByName(`${icon.name}-active`);
     const fileDataInactive = await getFileByName(icon.name);
@@ -163,7 +166,6 @@ function checkImageCache(
 ) {
   if (state === "active") {
     if (imageCache.has(`${link.toLocaleLowerCase()}-active`)) {
-      console.log("using cached image");
       return imageCache.get(`${link.toLocaleLowerCase()}-active`);
     }
     return getImageSrc(icons, link, state);

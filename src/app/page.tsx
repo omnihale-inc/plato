@@ -2,6 +2,7 @@ import Home from "@/components/Home";
 import Updates from "@/components/Updates";
 import Testimonies from "@/components/Testimonies";
 import MasterPage from "@/templates/MasterPage";
+import Certificates from "@/components/Certificates";
 
 export default function Page() {
   return (
@@ -9,6 +10,7 @@ export default function Page() {
       <Home />
       <Updates />
       <Testimonies />
+      <Certificates />
     </MasterPage>
   );
 }

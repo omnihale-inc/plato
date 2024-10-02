@@ -10,8 +10,9 @@ import Modal from "./Modal";
 
 const Documents = ({ searchQuery }: { searchQuery: string }) => {
   const [documents, setDocuments] = useState<
-    Array<{ title: string; url: string }>
+    Array<{ title: string; url: string; locked: boolean }>
   >([]);
+  const [isLocked, setIsLocked] = useState(true);
   useEffect(() => {
     if (searchQuery.trimStart().trimEnd() === "")
       setDocuments(schoolData.documents);
@@ -34,14 +35,14 @@ const Documents = ({ searchQuery }: { searchQuery: string }) => {
 const Document = ({
   document,
 }: {
-  document: { title: string; url: string };
+  document: { title: string; url: string; locked: boolean };
 }) => {
   const documentTitleRef = useRef<HTMLParagraphElement>(null);
   const [showModal, setShowModal] = useState(false);
   const [downloading, setDownloading] = useState(false);
 
   useEffect(() => {
-    truncateText(documentTitleRef, 2);
+    truncateText(documentTitleRef, 3);
   }, [document]);
   return (
     <>
@@ -81,6 +82,7 @@ const Document = ({
           </div>
         </div>
         {downloading && (
+          // downloading icon
           <div>
             <video
               src="/downloading.webM"
