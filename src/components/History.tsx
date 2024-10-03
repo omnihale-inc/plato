@@ -40,25 +40,27 @@ const History = () => {
               ))}
             </div>
             <div className="h-[50vh] lg:h-[40vh] mb-10 lg:mb-16 text-center text-sm lg:text-base overflow-y-auto modal-content-scroll">
-              {schoolData.history.texts.paragraphs.map((paragraph, index) => (
-                <p key={index} className="mb-2 lg:mb-4">
-                  {paragraph}
-                </p>
-              ))}
-              {schoolData.history.texts.events.map((event, index) => (
-                <ul className="my-5 lg:my-10 list-disc" key={index}>
-                  <h2
-                    className={`${handbuck.className} uppercase font-black mb-3`}
-                  >
-                    {event.title}
-                  </h2>
-                  {event.details.map((detail, index) => (
-                    <li key={index} className="mb-1 lg:mb-2 text-left">
-                      * {detail}
-                    </li>
-                  ))}
-                </ul>
-              ))}
+              <div className="bg-white py-5 px-6 mb-24 lg:mb-10 rounded-lg">
+                {schoolData.history.texts.paragraphs.map((paragraph, index) => (
+                  <p key={index} className="mb-2 lg:mb-4">
+                    {paragraph}
+                  </p>
+                ))}
+                {schoolData.history.texts.events.map((event, index) => (
+                  <ul className="my-5 lg:my-10 list-disc" key={index}>
+                    <h2
+                      className={`${handbuck.className} uppercase font-black mb-3`}
+                    >
+                      {event.title}
+                    </h2>
+                    {event.details.map((detail, index) => (
+                      <li key={index} className="mb-1 lg:mb-2 text-left">
+                        * {detail}
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
             </div>
           </Modal>
         )}

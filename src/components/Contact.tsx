@@ -7,7 +7,9 @@ const Contact: React.FC = () => {
   return (
     <section className="flex justify-between items-center bg-black/5 w-11/12 lg:w-11/12 h-36 lg:h-[355px] max-w-7xl mx-auto mt-12 lg:mt-32 px-4 py-7 rounded-md">
       <div className="w-8/12 lg:w-8/12 mx-auto lg:ml-10">
-        <h2 className={`${handbuck.className} text-base lg:text-3xl`}>
+        <h2
+          className={`${handbuck.className} text-base lg:text-3xl text-black`}
+        >
           You can reach us on
         </h2>
         <div className="grid grid-cols-4 lg:grid-cols-6 gap-2 lg:gap-3 mt-2 lg:mt-3">

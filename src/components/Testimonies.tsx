@@ -7,7 +7,7 @@ const Testimonies: React.FC = () => {
   return (
     <section className="mt-12 lg:mt-32">
       <h2
-        className={`${handbuck.className} mt-16 text-center text-black text-3xl lg:text-6xl`}
+        className={`${handbuck.className} mt-16 text-center text-3xl lg:text-6xl`}
       >
         Testimonies
       </h2>

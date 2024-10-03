@@ -7,7 +7,7 @@ const Leaders: React.FC = () => {
   return (
     <section>
       <h2
-        className={`${handbuck.className} mt-16 lg:mt-24 text-center text-black text-3xl lg:text-6xl`}
+        className={`${handbuck.className} mt-16 lg:mt-24 text-center text-3xl lg:text-6xl`}
       >
         Leaders
       </h2>

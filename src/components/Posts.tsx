@@ -62,7 +62,7 @@ const Updates: React.FC = () => {
                   className="rounded-lg"
                 />
               </div>
-              <div className="bg-white py-5 px-6 mb-10 rounded-lg">
+              <div className="bg-white py-5 px-6 mb-24 lg:mb-10 rounded-lg">
                 <h3 className={`${handbuck.className} text-lg lg:text-2xl`}>
                   {updateData.title}
                 </h3>
