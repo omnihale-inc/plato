@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="text-white lg:text-2xl">
           <span className={ollifiaPoettry.className}>Property</span> of{" "}
           <a href="https://omnihale.com" target="_blank">
-            Omnihale
+            Febol Schools
           </a>
         </div>
       </div>

@@ -47,34 +47,6 @@ function MasterPage({
     return () => window.removeEventListener("scroll", handlerWindowScroll);
   }, []);
 
-  useEffect(() => {
-    // Handles showing pop when user visits the website for the first
-    // using that device
-    const timeSinceLastPopUp = localStorage.getItem("last-popup");
-    const currentDate = new Date();
-    if (timeSinceLastPopUp) {
-      const timeSinceLastPopUpParsed = new Date(
-        timeSinceLastPopUp && JSON.parse(timeSinceLastPopUp)
-      );
-      const twoWeeksLater = new Date(
-        timeSinceLastPopUpParsed.getTime() + 14 * 24 * 60 * 60 * 1000
-      );
-      if (currentDate >= twoWeeksLater) {
-        setShowPopUp(true);
-        localStorage.setItem(
-          "last-popup",
-          JSON.stringify(currentDate.toISOString())
-        );
-      }
-    } else {
-      localStorage.setItem(
-        "last-popup",
-        JSON.stringify(currentDate.toISOString())
-      );
-      setShowPopUp(true);
-    }
-  }, []);
-
   return (
     <main>
       <TopNavigation onMobileNav={setMobileNav} hideNav={hideNav} />

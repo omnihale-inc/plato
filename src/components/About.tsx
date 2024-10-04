@@ -11,7 +11,7 @@ const About: React.FC = () => {
       <div className="flex flex-col justify-between items-center mx-auto max-w-6xl w-5/6">
         <div className="lg:w-5/6 mb-4 lg:mb-8">
           <h1
-            className={`${handbuck.className} text-center text-3xl lg:text-7xl mb-6`}
+            className={`${handbuck.className} text-center text-3xl lg:text-5xl mb-3`}
           >
             {schoolData.about.header.main}{" "}
             <span>{schoolData.about.header.span}</span>
@@ -22,7 +22,7 @@ const About: React.FC = () => {
             >
               Our Mission
             </h2>
-            <p className="text-xs lg:text-base text-center max-w-[900px] mx-auto font-light leading-2 lg:leading-[25px] mb-3 lg:mb-0">
+            <p className="text-sm lg:text-lg text-center max-w-[900px] mx-auto font-light leading-2 lg:leading-[25px] mb-3 lg:mb-0">
               {schoolData.about.mission}
             </p>
           </div>

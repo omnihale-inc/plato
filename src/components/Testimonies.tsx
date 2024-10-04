@@ -14,15 +14,17 @@ const Testimonies: React.FC = () => {
       <div className="flex md:justify-evenly lg:justify-center overflow-x-scroll md:overflow-auto md:flex-wrap text-black mt-7 lg:mt-14 mx-5 leaders-scroll">
         {schoolData.testimonies.map((testimony, index) => (
           <div key={index} className={`mr-7 basis-56 shrink-0 md:mb-16`}>
-            <div className="relative h-[100px] w-[100px] mb-5 mx-auto ">
-              <Image
-                src={testimony.img}
-                alt={`${index}`}
-                fill
-                objectFit="cover"
-                className="rounded-full"
-              />
-            </div>
+            {testimony.img !== "" && (
+              <div className="relative h-[100px] w-[100px] mb-5 mx-auto ">
+                <Image
+                  src={testimony.img}
+                  alt={`${index}`}
+                  fill
+                  objectFit="cover"
+                  className="rounded-full"
+                />
+              </div>
+            )}
             <p className="text-sm lg:text-md text-center font-light">
               {testimony.details}
             </p>

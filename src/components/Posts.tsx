@@ -178,15 +178,17 @@ const UpdatesItem: React.FC<UpdatesItemProps> = ({
 
   return (
     <div className="mt-6 lg:mt-10">
-      <div className="relative h-36 lg:h-40 w-full">
-        <Image
-          src={update.image}
-          alt=""
-          fill
-          objectFit="cover"
-          className="rounded-md"
-        />
-      </div>
+      {update.image !== "" && (
+        <div className="relative h-36 lg:h-40 w-full">
+          <Image
+            src={update.image}
+            alt=""
+            fill
+            objectFit="cover"
+            className="rounded-md"
+          />
+        </div>
+      )}
       <h3 className={`${handbuck.className} lg:text-2xl mt-6`} ref={titleRef}>
         {update.title}
       </h3>

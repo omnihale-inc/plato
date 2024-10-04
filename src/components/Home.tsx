@@ -8,12 +8,12 @@ const Home: React.FC = () => {
     <section className="mt-40 lg:mt-44 mx-auto max-w-6xl w-5/6">
       <div className="w-4/5 max-w-2xl mx-auto ">
         <h1
-          className={`${handbuck.className} text-3xl text-center lg:text-7xl`}
+          className={`${handbuck.className} text-2xl text-center lg:text-5xl`}
         >
-          {schoolData.home.header.main} <br />
+          {schoolData.home.header.main}{" "}
           <span>{schoolData.home.header.span}</span>
         </h1>
-        <p className="text-xs text-center lg:text-base mt-3 lg:mt-0 font-light">
+        <p className="text-xs text-center lg:text-lg mt-3 lg:mt-0 font-light">
           {schoolData.home.paragraph}
         </p>
       </div>

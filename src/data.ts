@@ -4,89 +4,66 @@ const schoolData = {
 
   // Home Page Starts
   home: {
-    header: { main: "Welcome to", span: "PLATO" },
+    header: { main: "Welcome to", span: "Febol Schools" },
     paragraph:
-      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi",
-    image: "/home.jpg",
+      "Where learning meets excellence, and every child discovers their potential for growth, creativity, leadership, confidence, and lifelong success.",
+    image: "/home.png",
   },
   updates: [
     {
-      image: "/updates-images/item.png",
-      title: "Parent techers association coming up on the 2nd of februray",
+      image: "",
+      title: "📢 Admission Open! 2025/2026 Academic Session 🎓",
       description:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
+        "Secure your child’s future today! Enroll them in a school where excellence meets opportunity. Limited slots available – Don’t wait, admission is now open!",
     },
     {
-      image: "/updates-images/item.png",
-      title: "Students will be competing in maths olympiad",
+      image: "",
+      title: "👩‍🏫 We’re Hiring Teachers! 📚",
       description:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+        "Passionate about shaping young minds? Join our team of exceptional educators and inspire the next generation of leaders. Apply today and be part of something great!",
     },
     {
-      image: "/updates-images/item.png",
-      title: "School fees deadline will be on 30th of August",
+      image: "",
+      title: "🚀 Enhanced WAEC & JAMB Curriculum! ✨",
       description:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image: "/updates-images/item.png",
-      title: "School will be resuming on the 10th of september",
-      description:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image: "/updates-images/item.png",
-      title: "Parent techers association coming up on the 2nd of februray",
-      description:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image: "/updates-images/item.png",
-      title: "Students will be competing in maths olympiad",
-      description:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image: "/updates-images/item.png",
-      title: "School fees deadline will be on 30th of August",
-      description:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image: "/updates-images/item.png",
-      title: "School will be resuming on the 10th of september",
-      description:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+        "Success is not by chance – it’s by preparation. With our upgraded curriculum tailored for WAEC & JAMB, your child gains the edge to excel and achieve outstanding results.",
     },
   ],
   testimonies: [
     {
-      img: "/testimonies-images/1.png",
-      details: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: "/testimonies-images/2.png",
+      img: "",
       details:
-        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+        "“Since enrolling my son here, his confidence has skyrocketed. He now speaks up in class and even helps his younger siblings with homework!” – Mrs. Adeola O.",
     },
     {
-      img: "/testimonies-images/3.png",
+      img: "",
       details:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
+        "“The teachers don’t just teach; they truly care. My daughter looks forward to school every single day.” – Mr. Samuel A.",
     },
     {
-      img: "/testimonies-images/1.png",
-      details: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      img: "/testimonies-images/2.png",
+      img: "",
       details:
-        "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur.",
+        "“I was amazed by how well-prepared my child was for WAEC. The enhanced curriculum really makes a difference.” – Mrs. Chinyere K.",
     },
     {
-      img: "/testimonies-images/3.png",
+      img: "",
       details:
-        "Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet consectetur.",
+        "“This school feels like a family. The environment is safe, nurturing, and academically sound.” – Parent of SS2 Student",
+    },
+    {
+      img: "",
+      details:
+        "“The balance between academics and extracurricular activities is perfect. My child is excelling in both.” – Mrs. Fatima L.",
+    },
+    {
+      img: "",
+      details:
+        "“The teachers are approachable and dedicated. They go above and beyond to ensure every student succeeds.” – Mr. Oladimeji A.",
+    },
+    {
+      img: "",
+      details:
+        "“What impressed me most is the discipline and values instilled in the students. My child is not only smarter but also more responsible.” – Mrs. Uchenna M.",
     },
   ],
   certificates: ["/home.jpg", "/play.png", "/logo.png", "/error.jpg"],
@@ -96,12 +73,12 @@ const schoolData = {
   about: {
     header: { main: "Why choose", span: "Us" },
     mission:
-      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi!",
+      "At Febol Schools, we go beyond teaching — we inspire. Our dedicated teachers, strong academic track record, and values-driven approach prepare your child not just for exams, but for life’s opportunities. Because every child deserves a future filled with confidence, success, and pride.",
     video: "/about.mp4",
     values: [
-      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi!",
-      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi!",
-      "Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habitant consequat. Lorem ipsum dolor sit amet consectetur. Neque viverra vitae volutpat nulla habi!",
+      "We are committed to providing a world-class education that empowers students to achieve outstanding academic results and unlock their full potential.",
+      "We nurture character, honesty, and responsibility, ensuring that our students grow into principled leaders who make a positive impact.",
+      "By embracing creativity, modern teaching methods, and technology-driven learning, we prepare students to thrive in an ever-changing world.",
     ],
   },
   leaders: [
