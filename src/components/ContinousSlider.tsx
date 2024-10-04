@@ -1,16 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const ContinuousSlider = ({ images }: { images: string[] }) => {
   const [scrollImages, setScrollImages] = useState<Array<string>>();
   const [isPaused, setIsPaused] = useState(false);
+  const [storePosition, setStorePosition] = useState(0);
   const animationFrameRef = useRef<number | null>(null); // Store requestAnimationFrame ID
   const sliderRef = useRef<HTMLDivElement>(null);
   const showBackgroundRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // Duplicates the images a 1000 times
     let imagesToScroll: string[] = [];
     for (let index = 0; index < 1000; index++) {
@@ -19,16 +20,19 @@ const ContinuousSlider = ({ images }: { images: string[] }) => {
     setScrollImages(imagesToScroll);
   }, []);
 
+  let position = storePosition;
+
   const scrollSlider = () => {
-    // Scroll step is choosen based screen size
-    const scrollStep = window.innerHeight > 800 ? 1 : 3;
+    // Move pixel to the left by 1
+    position -= 1;
 
     const slider = sliderRef.current;
 
     if (!slider) return;
 
     if (!isPaused) {
-      slider.scrollLeft += scrollStep;
+      slider.style.transform = `translateX(${position}px) translateZ(0)`;
+      slider.style.willChange = "transform";
 
       // When scroll reaches the end, reset to the beginning to create a seamless loop
       if (slider.scrollLeft >= slider.scrollWidth / 2) {
@@ -57,13 +61,14 @@ const ContinuousSlider = ({ images }: { images: string[] }) => {
     } else {
       // Pause scrolling by canceling the current animation frame
       cancelAnimationFrame(animationFrameRef.current as number);
+      setStorePosition(position);
     }
   };
 
   return (
     <div className="flex flex-col items-center">
-      <div className="w-full overflow-hidden whitespace-nowrap" ref={sliderRef}>
-        <div className="inline-flex">
+      <div className="w-full overflow-hidden whitespace-nowrap">
+        <div className="inline-flex" ref={sliderRef}>
           {scrollImages &&
             scrollImages.map((src, index) => (
               <div
